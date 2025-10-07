@@ -146,6 +146,9 @@ class Score :
     Scoreに関するクラス
     """
     def __init__(self):
+        """
+        イニシャライザ
+        """
         self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)
         self.color = (0, 0, 255) 
         self.value = 0
@@ -154,9 +157,15 @@ class Score :
         self.rct.bottomleft = (100, HEIGHT - 50)
 
     def add(self, amount: int = 1):
+        """
+        加点
+        """
         self.value += amount
 
     def update(self, screen: pg.Surface):
+        """
+        スコア表示
+        """
         self.img = self.fonto.render(f"スコア: {self.value}", 0, self.color)
         screen.blit(self.img, self.rct)
 
